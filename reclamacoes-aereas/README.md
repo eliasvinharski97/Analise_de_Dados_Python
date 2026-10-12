@@ -18,6 +18,13 @@ Cancelamento de voo, problemas de reembolso e extravio/avaria de bagagem, carga 
 
 Dezembro teve o maior volume, **10.723 registros**, com aumento de **25,78%** sobre novembro. A base não permite atribuir a causa a férias, demanda ou piora do serviço.
 
+## Decisões técnicas em destaque
+
+- **Preservar a base original:** o notebook cria uma cópia para análise e uma coluna específica para tempos válidos. Tempos negativos deixam de participar das médias de duração, sem excluir essas reclamações dos demais indicadores.
+- **Definir o denominador da resolução:** somente os desfechos `Resolvida` e `Não Resolvida` entram nessa taxa. A cobertura da avaliação é apresentada separadamente para mostrar quanto da base sustenta o resultado.
+- **Inconsistência encontrada:** a situação `Finalizada avaliada` tem 52.058 registros, mas o campo de desfecho tem 52.055 avaliações explícitas. O cruzamento dos campos aparece no notebook; cada cálculo utiliza o campo correspondente.
+- **Como conferir:** o [notebook](analise_reclamacoes_aereas.ipynb) mostra contagens, categorias, ausentes e o cruzamento entre situação e desfecho. As [tabelas exportadas](resultados/) permitem acompanhar os resultados por empresa, problema e mês.
+
 ## Visualizações
 
 ![Resolução por empresa](graficos/resolucao_por_empresa.png)
